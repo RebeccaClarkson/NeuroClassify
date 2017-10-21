@@ -12,6 +12,7 @@
       include for input resistance and sag/rebound calculations
 
 Example: 
+
     Import_and_Classify('040915-2*', 'select_sweeps', 0)
 
 ### If data is already in Matlab:
