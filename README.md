@@ -2,7 +2,7 @@
 
 ## Prefrontal cortex layer 5 pyramidal neuron classification
 
-###If data needs to be exported from Igor:
+### If data needs to be exported from Igor:
 1. Export from Igor to Matlab - make sure the ibt files are within the Matlab
    path 
 
@@ -13,7 +13,7 @@
 
     Import_and_Classify('040915-2*', 'select_sweeps', 0)
 
-###If data is already in Matlab:
+### If data is already in Matlab:
 1. `AnalyzeCell`(Cell)
 Cell must be a structure with these fields (m = # of data points per
 sweep, n = # of sweeps):
@@ -24,13 +24,13 @@ sweep, n = # of sweeps):
     * `CaBuffer` (*EGTA* or *Fluo5*)
     * `cell_location` (*PFC*)
 
-###Requirements for classification:
+### Requirements for classification:
 * Spiking has to be within the first 2.5 minutes, elicited by 300 ms current
   injection.
 * Sag/rebound sweeps must be within the first 5 minutes, and be 120 ms pulse
   duration
 
-###References:
+### References:
 Clarkson et al. 2017, Journal of Neuroscience: 
 ["D3 Receptors Regulate Excitability in a Unique Class of Prefrontal Pyramidal
 Cells"](http://www.jneurosci.org/content/37/24/5846)
