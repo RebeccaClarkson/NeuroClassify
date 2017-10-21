@@ -6,8 +6,7 @@
 1. Export from Igor to Matlab - make sure the ibt files are within the Matlab
    path 
 
-2.  Run `Import_and_Classify`(Cell), where "Cell" is a string with an asterix
-   after it.
+2.  Run `Import_and_Classify`(`cell_name*`) 
     * Option: `select_sweep`: interactively select which sweeps you want to
       include for input resistance and sag/rebound calculations
 
@@ -17,12 +16,12 @@ Example:
 
 ### If data is already in Matlab:
 1. `AnalyzeCell`(Cell)
-Cell must be a structure with these fields (m = # of data points per
-sweep, n = # of sweeps):
-    * `commands` (current injection commands, mxn)
-    * `data` (current clamp recordings, mxn)
-    * `sweep_time` (time after break-in, in seconds, 1xn)
-    * `kHz` (sampling frequency in kHz, 1xn)
+Cell must be a structure with these fields (`m` = # of data points per
+sweep, `n` = # of sweeps):
+    * `commands` (current injection commands, `m`x`n`)
+    * `data` (current clamp recordings, `m`x`n`)
+    * `sweep_time` (time after break-in, in seconds, 1x`n`)
+    * `kHz` (sampling frequency in kHz, 1x`n`)
     * `CaBuffer` (*EGTA* or *Fluo5*)
     * `cell_location` (*PFC*)
 
@@ -34,5 +33,5 @@ sweep, n = # of sweeps):
 
 ### References:
 Clarkson et al. 2017, Journal of Neuroscience: 
-["D3 Receptors Regulate Excitability in a Unique Class of Prefrontal Pyramidal
-Cells"](http://www.jneurosci.org/content/37/24/5846)
+[D3 Receptors Regulate Excitability in a Unique Class of Prefrontal Pyramidal
+Cells](http://www.jneurosci.org/content/37/24/5846)
