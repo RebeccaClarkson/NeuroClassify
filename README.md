@@ -21,7 +21,7 @@ sweep, n = # of sweeps):
     * `commands` (current injection commands, mxn)
     * `data` (current clamp recordings, mxn)
     * `sweep_time` (time after break-in, in seconds, 1xn)
-    * `kHz` = sampling frequency in kHz (1xn)
+    * `kHz` (sampling frequency in kHz, 1xn)
     * `CaBuffer` (*EGTA* or *Fluo5*)
     * `cell_location` (*PFC*)
 
