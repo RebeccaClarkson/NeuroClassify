@@ -1,5 +1,9 @@
 function varargout = clickableLegend(varargin)
-% clickableLegend is a wrapper around the LEGEND function that provides the
+
+% Copied from:
+% https://www.mathworks.com/matlabcentral/fileexchange/21799-clickablelegend-interactive-highlighting-of-data-in-figures
+% 
+%clickableLegend is a wrapper around the LEGEND function that provides the
 % added functionality to turn on and off (hide or show) a set of graphics
 % objects (lines or patches) by clicking on an associated text label in the legend. Its usage is
 % the same as the <a href="matlab: help legend">LEGEND</a> function with additional optional parameters. For
