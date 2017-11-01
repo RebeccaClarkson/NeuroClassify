@@ -3,16 +3,15 @@
 ## Prefrontal cortex layer 5 pyramidal neuron classification
 
 ### If data needs to be exported from Igor:
-1. Export from Igor to Matlab - make sure the ibt files are within the Matlab
-   path 
+1. Export from Igor to Matlab - make sure the ibt files are in `filepath`
 
-2.  Run `Import_and_Classify`(`cell_name*`) 
+2.  Run `Import_and_Classify`(`cell_name*`, `filepath`) 
     * Option: `select_sweep`: interactively select which sweeps you want to
       include for input resistance and sag/rebound calculations
 
 Example: 
 
-    Import_and_Classify('040915-2*', 'select_sweeps', 0)
+    Import_and_Classify('040915-2*', `filepath`, 'select_sweeps', 0)
 
 ### If data is already in Matlab:
 1. `AnalyzeCell`(Cell)
