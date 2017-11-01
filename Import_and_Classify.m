@@ -4,26 +4,28 @@
 %                       ASSUMPTIONS
 % Timing for sag/rebound and Rin pulses are consistent across selected
 % sweeps.
-% Igor-to-Matlab has to be exported to C:\Data\Export
+% Igor-to-Matlab has to be exported to "filepath"
 
 
-function [Cell] = Import_and_Classify(Cell_to_load, opts, varargin)
+function [Cell] = Import_and_Classify(Cell_to_load, filepath, opts, varargin)
 
-options = struct('select_sweeps', 1);
+options = struct('select_sweeps', 0);
 
 switch nargin
-    case 1
     case 2
+    case 3
         options = fOptions(options, opts);
     otherwise
         options = fOptions(options, struct(opts, varargin{:}));
 end
 
-
+currentfolder = cd;
 try
+    cd(filepath)
     [Cell] = ImportCell(Cell_to_load, options.select_sweeps);
 catch
 end
+cd(currentfolder)
 
 % Run all analyses on the particular cell
 
@@ -31,7 +33,7 @@ if exist('Cell', 'var')
     
     if isfield(Cell, 'cell_location')
         if strcmp(Cell.cell_location, 'cPFC') || strcmp(Cell.cell_location, 'iPFC') || strcmp(Cell.cell_location, 'PFC')
-            [Cell] = AnalyzeCell(Cell);
+            [Cell] = Analyze_Cell(Cell);
             [type] = Classify_Cell(Cell);
             if strcmp(type, 'Type 1')
                 Cell.type = 1;

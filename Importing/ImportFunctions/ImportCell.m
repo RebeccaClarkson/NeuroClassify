@@ -2,7 +2,6 @@ function[Cell] = ImportCell(Cell_to_load, select_sweeps)
 %IMPORT_CELL
 %
 
-current_folder = cd;
 % All cells from Igor must within the matlab file path in the below folder; 
 
 
@@ -12,7 +11,6 @@ try
     Cell = ConvertDAQ(Cell);
     Cell.Fs = intersect(Cell.kHz, Cell.kHz)*1000;
 catch ME
-    cd(current_folder)
     warning(ME.message)
 end
 
@@ -158,7 +156,7 @@ end
                 str = input('Do you want to keep these changes? y/n  ', 's');
                 
                 if str ~= 'y' && str ~= 'n'
-                    str = input('Please enter "y" or "n"  ', 's')
+                    str = input('Please enter "y" or "n"  ', 's');
                 end
                 
                 if str == 'y'
@@ -182,7 +180,6 @@ end
         
     end
 
-cd(current_folder)
 
 [Cell] = InputCellProperties(Cell);
 
