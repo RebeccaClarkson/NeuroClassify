@@ -32,7 +32,7 @@ for i = 3:8
    
     % Compute the distance from decision boundary of the genetically labelled cells and the given
     % nonfluorescent cell
-  
+
     D1_distances = distance_from_hyperplane(K, L, D1_points);
     D3_distances = distance_from_hyperplane(K, L, D3_points);
     NonFluor_distances = distance_from_hyperplane(K, L, NonFluor_points);

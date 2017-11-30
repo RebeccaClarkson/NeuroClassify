@@ -7,9 +7,9 @@
 % Igor-to-Matlab has to be exported to "filepath"
 
 
-function [Cell] = Import_and_Classify(Cell_to_load, filepath, opts, varargin)
+function [Cell] = Import_and_Classify(Cell_to_load, opts, varargin)
 
-options = struct('select_sweeps', 0);
+options = struct('select_sweeps', 0, 'filepath', 'cell_folder/ibt_files/');
 
 switch nargin
     case 2
@@ -20,11 +20,15 @@ switch nargin
 end
 
 currentfolder = cd;
-try
-    cd(filepath)
+
+cd(options.filepath)
+
+if ischar(Cell_to_load)
     [Cell] = ImportCell(Cell_to_load, options.select_sweeps);
-catch
+else
+    Cell = Cell_to_load;
 end
+
 cd(currentfolder)
 
 % Run all analyses on the particular cell

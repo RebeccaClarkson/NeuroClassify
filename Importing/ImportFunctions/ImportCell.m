@@ -2,9 +2,6 @@ function[Cell] = ImportCell(Cell_to_load, select_sweeps)
 %IMPORT_CELL
 %
 
-% All cells from Igor must within the matlab file path in the below folder; 
-
-
 % Import cell from igor
 try
     Cell = load_ibw(Cell_to_load);
@@ -17,15 +14,11 @@ end
 
 % Determine what calcium buffer was used
 
-% Setting default as 'EGTA'
-Cell.CaBuffer = 'EGTA';
-% str = input('What calcium buffer was used? (Fluo5 or EGTA)  ', 's');
-% if ~strcmp(str, 'Fluo5') && ~strcmp(str, 'EGTA')
-%     str = input('Please enter "Fluo5" or "EGTA"  ', 's');
-% end
-% Cell.CaBuffer = str;
-
-
+str = input('What calcium buffer was used? (Fluo5 or EGTA)  ', 's');
+if ~strcmp(str, 'Fluo5') && ~strcmp(str, 'EGTA')
+    str = input('Please enter "Fluo5" or "EGTA"  ', 's');
+end
+Cell.CaBuffer = str;
 
 % Establish Cell.time
 [~, num_sweeps] = size(Cell.data);
@@ -97,8 +90,6 @@ end
                 end
             end
         end
-        
-        
         
         % Compute the average Rin sweep, the output of this function
         
@@ -189,8 +180,8 @@ function [Cell] = InputCellProperties(Cell)
 
 % Optional inputs - comment out if desired
 % Determine the animal genotype and age
-Cell.mouse_genotype = input('What is the mouse genotype?  ', 's');
-Cell.genetic_marker = input('What is the genetic marker? ', 's');
+% Cell.mouse_genotype = input('What is the mouse genotype?  ', 's');
+% Cell.genetic_marker = input('What is the genetic marker? ', 's');
 % Cell.animal_age = input('What is mouse age in days?   ', 's');
 % Cell.Vm = input('What was the resting membrane potential?    ');
 
