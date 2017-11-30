@@ -5,7 +5,7 @@
 ### If data needs to be exported from Igor:
 1.  Export from Igor using `Igor_Export.pxp`
 
-2.  Run `Import_and_Classify`(`cell_name`, `options`) 
+2.  Run `Import_and_Classify`(`cell_name`, `options`) in Matlab
     * `cell_name`: string with the cell name, followed by an asterix
     * `options` (as struct)
         - 'filepath': relative filepath to location of ibt files 
